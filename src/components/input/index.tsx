@@ -3,7 +3,7 @@ import { IconBaseProps } from 'react-icons';
 import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';
 
-import { Container, Error }from './style';
+import { Container, Error } from './style';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement>  {
   name: string;
@@ -37,7 +37,12 @@ const Input: React.FC<InputProps> = ({name, icon:Icon, ...rest } ) => {
 
 
   return (
-    <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused} >
+    <Container 
+      isErrored={!!error} 
+      isFilled={isFilled} 
+      isFocused={isFocused}
+      data-testid="input-container"
+      >
       { Icon && <Icon size={20} />}
       <input
       onFocus={handleInputFocus}

@@ -9,7 +9,7 @@ import getValidationErrors from "../../utils/getValidationErrors";
 import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 
-import Input from "../../components/input";
+import Input from "../../components/Input";
 import Button from "../../components/button";
 
 import api from "../../services/api";
@@ -78,15 +78,7 @@ const Profile: React.FC = () => {
           password_confirmation
         } : {});
 
-        console.log(formData.old_password);
-        console.log(formData.password);
         const response = await api.put('/profile', formData);
-
-        
-
-
-        
-
         updateUser(response.data);
 
         history.push('/Dashboard');

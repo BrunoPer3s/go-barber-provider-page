@@ -12,7 +12,7 @@ import { useToast } from "../../hooks/Toast";
 import getValidationErrors from "../../utils/getValidationErrors";
 
 import Button from "../../components/button";
-import Input from "../../components/input";
+import Input from "../../components/Input";
 
 import logoImg from "../../assets/logo.svg";
 
@@ -27,8 +27,6 @@ const SignIn: React.FC = () => {
   const { signIn, user } = useAuth();
   const { addToast } = useToast();
   const history = useHistory();
-
-  console.log(user);
 
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
